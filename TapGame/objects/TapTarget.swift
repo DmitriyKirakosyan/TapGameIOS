@@ -27,7 +27,7 @@ class TapTarget: SKSpriteNode {
     
     init() {
         let texture = SKTexture(imageNamed: "tapTarget001")
-        super.init(texture: texture, color: UIColor.clearColor(), size: texture.size())
+        super.init(texture: texture, color: UIColor.clear, size: texture.size())
         
         // animation textures
         var textures: [SKTexture] = [];
@@ -38,9 +38,9 @@ class TapTarget: SKSpriteNode {
         }
         
         animation = SKAction.sequence([
-            SKAction.animateWithTextures(textures, timePerFrame: 0.03)
+            SKAction.animate(with: textures, timePerFrame: 0.03)
             ])
-        animation = SKAction.repeatActionForever(animation)
+        animation = SKAction.repeatForever(animation)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -48,15 +48,15 @@ class TapTarget: SKSpriteNode {
     }
     
     func startAnimating() {
-        self.runAction(animation, withKey: "animating")
+        self.run(animation, withKey: "animating")
     }
     
     func stopAnimating() {
-        self.removeActionForKey("animating")
+        self.removeAction(forKey: "animating")
     }
     
     func setTapped() {
-        let index = random() % _deathTextures.count
+        let index = Int(arc4random()) % _deathTextures.count
         let deathTexture = SKTexture(imageNamed: _deathTextures[index])
         self.texture = deathTexture
     }

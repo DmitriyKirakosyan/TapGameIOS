@@ -11,8 +11,8 @@ import SpriteKit
 
 class GameViewController: UIViewController, GameSceneDelegate, ResultViewControllerDelegate {
     
-    private var gameScene: GameScene?
-    private var resultController: ResultViewController?
+    fileprivate var gameScene: GameScene?
+    fileprivate var resultController: ResultViewController?
     
     deinit {
         if DebugSettings.enableDeinitLogs {
@@ -34,7 +34,7 @@ class GameViewController: UIViewController, GameSceneDelegate, ResultViewControl
             skView.ignoresSiblingOrder = true
             
             /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
+            scene.scaleMode = .aspectFill
             
 //            SKColor(patternImage: UIImage(named: "backTile")!)
 //            scene.backgroundColor = SKColor(patternImage: UIImage(named: "backTile")!);
@@ -43,22 +43,22 @@ class GameViewController: UIViewController, GameSceneDelegate, ResultViewControl
         }
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
 //        (self.view as! SKView).presentScene(gameScene)
         gameScene?.gameDelegate = self
         gameScene?.startGame()
     }
     
     
-    override func shouldAutorotate() -> Bool {
+    override var shouldAutorotate : Bool {
         return true
     }
 
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        if UIDevice.currentDevice().userInterfaceIdiom == .Phone {
-            return .AllButUpsideDown
+    override var supportedInterfaceOrientations : UIInterfaceOrientationMask {
+        if UIDevice.current.userInterfaceIdiom == .phone {
+            return .allButUpsideDown
         } else {
-            return .All
+            return .all
         }
     }
 
@@ -67,22 +67,22 @@ class GameViewController: UIViewController, GameSceneDelegate, ResultViewControl
         // Release any cached data, images, etc that aren't in use.
     }
 
-    override func prefersStatusBarHidden() -> Bool {
+    override var prefersStatusBarHidden : Bool {
         return true
     }
     
     
     //MARK: - GameSceneDelegate
     
-    func gameOver(score: Int) {
-        let defaults = NSUserDefaults.standardUserDefaults()
-        let bestScore = defaults.integerForKey("bestScore")
+    func gameOver(_ score: Int) {
+        let defaults = UserDefaults.standard
+        let bestScore = defaults.integer(forKey: "bestScore")
         if score > bestScore {
-            defaults.setInteger(score, forKey: "bestScore")
+            defaults.set(score, forKey: "bestScore")
         }
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        resultController = storyboard.instantiateViewControllerWithIdentifier("ResultViewController") as? ResultViewController;
+        resultController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController;
         resultController!.delegate = self
         
         self.view.addSubview(resultController!.view)
@@ -104,10 +104,10 @@ class GameViewController: UIViewController, GameSceneDelegate, ResultViewControl
         gameScene = nil
         (self.view as! SKView).presentScene(nil)
         
-        navigationController?.popToRootViewControllerAnimated(true)
+        navigationController?.popToRootViewController(animated: true)
     }
     
-    private func dismissResultController() {
+    fileprivate func dismissResultController() {
         resultController?.view.removeFromSuperview()
         resultController?.delegate = nil
         resultController = nil

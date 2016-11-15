@@ -12,7 +12,7 @@ class Settings {
     static var jsonResult: NSDictionary!
     static var soundVolume: Float {
         get {
-            if let result = jsonResult.objectForKey("sound_volume") as? Float {
+            if let result = jsonResult.object(forKey: "sound_volume") as? Float {
                 return result;
             }
             return 0
@@ -20,7 +20,7 @@ class Settings {
     }
     static var objectSpeedMin: Float {
         get {
-            if let result = jsonResult.objectForKey("object_speed_min") as? Float {
+            if let result = jsonResult.object(forKey: "object_speed_min") as? Float {
                 return result;
             }
             return 0
@@ -28,7 +28,7 @@ class Settings {
     }
     static var objectSpeedMax: Float {
         get {
-            if let result = jsonResult.objectForKey("object_speed_max") as? Float {
+            if let result = jsonResult.object(forKey: "object_speed_max") as? Float {
                 return result;
             }
             return 0
@@ -36,7 +36,7 @@ class Settings {
     }
     static var objectSpeedIncreasing: Float {
         get {
-            if let result = jsonResult.objectForKey("object_speed_increasing") as? Float {
+            if let result = jsonResult.object(forKey: "object_speed_increasing") as? Float {
                 return result;
             }
             return 0
@@ -45,21 +45,21 @@ class Settings {
     
     static var maxFails: Int {
         get {
-            if let result = jsonResult.objectForKey("max_fails") as? Int {
+            if let result = jsonResult.object(forKey: "max_fails") as? Int {
                 return result;
             }
             return 0
         }
     }
 
-    class func load(fileName: String) {
-        if let path = NSBundle.mainBundle().pathForResource(fileName, ofType: "json")
+    class func load(_ fileName: String) {
+        if let path = Bundle.main.path(forResource: fileName, ofType: "json")
         {
             do
             {
-                let jsonData = try NSData(contentsOfFile: path, options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let jsonData = try Data(contentsOf: URL(fileURLWithPath: path), options: NSData.ReadingOptions.mappedIfSafe)
                 
-                if let result: NSDictionary = try NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers) as? NSDictionary
+                if let result: NSDictionary = try JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
                 {
                     jsonResult = result
                 }

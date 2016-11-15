@@ -15,7 +15,7 @@ protocol ObjectPopulationDelegate {
 class ObjectPopulation: NSObject, TTBehaviorDelegate {
     var scene: SKScene
     var objects: [TapTargetBehavior] = []
-    var timer = NSTimer()
+    var timer = Timer()
     
     var minSpeed: Float = 0
     var maxSpeed: Float = 0
@@ -50,8 +50,8 @@ class ObjectPopulation: NSObject, TTBehaviorDelegate {
     }
     
     /// returns number of killed
-    func tryKillSome(location: CGPoint) -> Int {
-        let objectsToKill = objects.filter { $0.tapTarget != nil && $0.tapTarget!.containsPoint(location) }
+    func tryKillSome(_ location: CGPoint) -> Int {
+        let objectsToKill = objects.filter { $0.tapTarget != nil && $0.tapTarget!.contains(location) }
         
         let result = objectsToKill.count
         
@@ -63,7 +63,7 @@ class ObjectPopulation: NSObject, TTBehaviorDelegate {
     // Private methods
     
     func scheduleTimer() {
-        timer = NSTimer.scheduledTimerWithTimeInterval(self.getTimerInterval(), target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
+        timer = Timer.scheduledTimer(timeInterval: self.getTimerInterval(), target: self, selector: #selector(timerAction), userInfo: nil, repeats: false)
     }
     
     func createNewObject() {
@@ -85,14 +85,14 @@ class ObjectPopulation: NSObject, TTBehaviorDelegate {
         self.scheduleTimer()
     }
     
-    func getTimerInterval() -> NSTimeInterval {
+    func getTimerInterval() -> TimeInterval {
         return 1
     }
     
-    func removeObjectFromScene(object: TapTarget?, animated: Bool) {
+    func removeObjectFromScene(_ object: TapTarget?, animated: Bool) {
         if animated {
             object?.setTapped()
-            object?.runAction(SKAction.fadeAlphaTo(0, duration: 2), completion: {
+            object?.run(SKAction.fadeAlpha(to: 0, duration: 2), completion: {
                 [weak object] in // if we don't use weak here, otherwise we get retain circle
                 
                 object?.removeFromParent()
@@ -102,11 +102,11 @@ class ObjectPopulation: NSObject, TTBehaviorDelegate {
         }
     }
     
-    func destroyObject(behavior: TapTargetBehavior, animated: Bool) {
+    func destroyObject(_ behavior: TapTargetBehavior, animated: Bool) {
         let tapTarget = behavior.tapTarget
         behavior.delegate = nil
         behavior.destroy()
-        objects.removeAtIndex(objects.indexOf(behavior)!)
+        objects.remove(at: objects.index(of: behavior)!)
 
         
         self.removeObjectFromScene(tapTarget, animated: animated)
@@ -119,7 +119,7 @@ class ObjectPopulation: NSObject, TTBehaviorDelegate {
     
     //MARK: - TTBehaviorDelegate
     
-    func objectLeft(behaviour: TapTargetBehavior) {
+    func objectLeft(_ behaviour: TapTargetBehavior) {
         destroyObject(behaviour, animated: false)
         
         delegate?.objectWasLost()

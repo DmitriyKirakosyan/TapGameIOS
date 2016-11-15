@@ -10,7 +10,7 @@ import SpriteKit
 import GoogleMobileAds
 
 protocol GameSceneDelegate {
-    func gameOver(score: Int)
+    func gameOver(_ score: Int)
 }
 
 class GameScene: SKScene, ObjectPopulationDelegate {
@@ -19,7 +19,7 @@ class GameScene: SKScene, ObjectPopulationDelegate {
     var score: Int = 0;
     var remainingFails: Int = 0;
     
-    var population: ObjectPopulation!
+    var population: ObjectPopulation?
     
     var gameDelegate: GameSceneDelegate?
     
@@ -29,7 +29,7 @@ class GameScene: SKScene, ObjectPopulationDelegate {
         }
     }
     
-    override func didMoveToView(view: SKView) {
+    override func didMove(to view: SKView) {
         // to make the scene size be actual
         self.size = self.view!.frame.size;
         
@@ -55,25 +55,27 @@ class GameScene: SKScene, ObjectPopulationDelegate {
         displayScore()
         
         population = ObjectPopulation(container: self)
-        population.delegate = self
-        population.run()
+        population!.delegate = self
+        population!.run()
     }
     
-    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
        /* Called when a touch begins */
         
+        guard let population = population else { return }
+        
         for touch in touches {
-            let location = touch.locationInNode(self)
+            let location = touch.location(in: self)
             
             self.increaseScoreFor(population.tryKillSome(location))
         }
     }
    
-    override func update(currentTime: CFTimeInterval) {
+    override func update(_ currentTime: TimeInterval) {
         /* Called before each frame is rendered */
     }
     
-    func increaseScoreFor(scoreAmount: Int) {
+    func increaseScoreFor(_ scoreAmount: Int) {
         score += scoreAmount
         
         displayScore()
@@ -96,13 +98,13 @@ class GameScene: SKScene, ObjectPopulationDelegate {
     }
     
     
-    private func destroyScene() {
-        population.stop()
-        population.delegate = nil
+    fileprivate func destroyScene() {
+        population?.stop()
+        population?.delegate = nil
         population = nil
     }
     
-    private func setupBackground() {
+    fileprivate func setupBackground() {
         var totW: CGFloat = 0;
         var totH: CGFloat = 0;
         var i = 0;
@@ -117,7 +119,7 @@ class GameScene: SKScene, ObjectPopulationDelegate {
                 let xPosition = CGFloat(i) * tile.size().width + tile.size().width/2
                 let yPosition = CGFloat(j) * tile.size().height + tile.size().height/2
                 
-                bg.position = CGPointMake(xPosition, yPosition);
+                bg.position = CGPoint(x: xPosition, y: yPosition);
                 
                 self.addChild(bg)
                 i += 1

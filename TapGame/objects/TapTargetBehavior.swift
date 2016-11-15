@@ -10,7 +10,7 @@ import SpriteKit
 
 
 protocol TTBehaviorDelegate {
-    func objectLeft(behaviour: TapTargetBehavior)
+    func objectLeft(_ behaviour: TapTargetBehavior)
 }
 
 class TapTargetBehavior: NSObject {
@@ -42,7 +42,7 @@ class TapTargetBehavior: NSObject {
         }
     }
 
-    func act(tapTarget: TapTarget) {
+    func act(_ tapTarget: TapTarget) {
         self.isActing = true
         self.tapTarget = tapTarget
         self.tapTarget?.removeAllActions()
@@ -53,23 +53,23 @@ class TapTargetBehavior: NSObject {
     //Private methods
     
     
-    func flySomewhere(firstLaunch: Bool = false) {
+    func flySomewhere(_ firstLaunch: Bool = false) {
         if let target = tapTarget {
-            target.removeActionForKey("moveAction")
+            target.removeAction(forKey: "moveAction")
             
             
-            let goForDeath = random() % 2 == 1 && !firstLaunch
+            let goForDeath = arc4random() % 2 == 1 && !firstLaunch
             let pointToFly = goForDeath ?
                 Utils.getOutOfBorderLocation(screenSize, offset: target.size.width * 2) :
                 self.getPointToFly(firstLaunch)
             
             let completion = goForDeath ?
-                SKAction.runBlock {
+                SKAction.run {
                     [weak self] in
                     if self != nil && self!.isActing { self!.delegate?.objectLeft(self!) }
                 }
                 :
-                SKAction.runBlock {
+                SKAction.run {
                     [weak self] in
                     if self != nil && self!.isActing { self!.flySomewhere() }
                 }
@@ -78,9 +78,9 @@ class TapTargetBehavior: NSObject {
                 target.zRotation = self.getRotationToPoint(pointToFly)
                 
                 //moving
-                moveAction = SKAction.moveTo(pointToFly, duration: NSTimeInterval(self.getDurationToPoint(pointToFly)))
+                moveAction = SKAction.move(to: pointToFly, duration: TimeInterval(self.getDurationToPoint(pointToFly)))
                 moveAction = SKAction.sequence([moveAction!, completion])
-                target.runAction(moveAction!, withKey: "moveAction")
+                target.run(moveAction!, withKey: "moveAction")
         }
     }
     
@@ -88,8 +88,8 @@ class TapTargetBehavior: NSObject {
     func getPointToFly() -> CGPoint {
         return self.getPointToFly(false)
     }
-    func getPointToFly(longDistance: Bool) -> CGPoint {
-        var result = CGPoint(x: random() % Int(screenSize.width), y: random() % Int(screenSize.height))
+    func getPointToFly(_ longDistance: Bool) -> CGPoint {
+        var result = CGPoint(x: Int(arc4random()) % Int(screenSize.width), y: Int(arc4random()) % Int(screenSize.height))
         if tapTarget != nil && longDistance {
             if distance(tapTarget!.position, p2: result) < screenSize.width / 1.2 {
                 result = getPointToFly(true)
@@ -98,7 +98,7 @@ class TapTargetBehavior: NSObject {
         return result
     }
     
-    func getRotationToPoint(point: CGPoint) -> CGFloat {
+    func getRotationToPoint(_ point: CGPoint) -> CGFloat {
         if let target = tapTarget {
             let dx = target.position.x - point.x;
             let dy = target.position.y - point.y;
@@ -108,7 +108,7 @@ class TapTargetBehavior: NSObject {
         return 0
     }
     
-    func getDurationToPoint(point: CGPoint) -> CGFloat {
+    func getDurationToPoint(_ point: CGPoint) -> CGFloat {
         let basicSpeed = CGFloat(1 / speed) / screenSize.width
         if let target = tapTarget {
             return basicSpeed * self.distance(target.position, p2: point)
@@ -116,7 +116,7 @@ class TapTargetBehavior: NSObject {
         return 0
     }
     
-    func distance(p1: CGPoint, p2: CGPoint) -> CGFloat {
+    func distance(_ p1: CGPoint, p2: CGPoint) -> CGFloat {
         return hypot(p1.x - p2.x, p1.y - p2.y);
     }
 }

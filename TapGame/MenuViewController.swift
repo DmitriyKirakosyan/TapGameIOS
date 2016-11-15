@@ -19,8 +19,8 @@ class MenuViewController: UIViewController {
         
     }
     
-    override func viewDidAppear(animated: Bool) {
-        playButton.titleLabel!.font = playButton.titleLabel!.font.fontWithSize(playButton.frame.size.height / 2.2)
+    override func viewDidAppear(_ animated: Bool) {
+        playButton.titleLabel!.font = playButton.titleLabel!.font.withSize(playButton.frame.size.height / 2.2)
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,7 +42,7 @@ class MenuViewController: UIViewController {
     }
     */
     
-    @IBAction func unwindFromViewController(segue: UIStoryboardSegue) {
+    @IBAction func unwindFromViewController(_ segue: UIStoryboardSegue) {
         print("and we are back")
     }
 

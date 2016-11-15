@@ -27,7 +27,7 @@ class ResultViewController: UIViewController, GADInterstitialDelegate {
     
     deinit {
         if DebugSettings.enableDeinitLogs {
-            print("Result view controller is deinited")
+            print("Result view controller was deinited")
         }
     }
 
@@ -39,29 +39,29 @@ class ResultViewController: UIViewController, GADInterstitialDelegate {
     }
     
     override func viewDidLayoutSubviews() {
-        self.scoreLabel.font = self.scoreLabel.font.fontWithSize(self.scoreLabel.frame.size.height)
-        self.scoreTitleLabel.font = self.scoreLabel.font.fontWithSize(self.scoreLabel.frame.size.height)
-        self.bestScoreLabel.font = self.bestScoreLabel.font.fontWithSize(self.bestScoreLabel.frame.size.height)
-        self.playAgainButton.titleLabel!.font = self.scoreLabel.font.fontWithSize(self.scoreLabel.frame.size.height)
-        self.menuButton.titleLabel!.font = self.scoreLabel.font.fontWithSize(self.scoreLabel.frame.size.height)
+        self.scoreLabel.font = self.scoreLabel.font.withSize(self.scoreLabel.frame.size.height)
+        self.scoreTitleLabel.font = self.scoreLabel.font.withSize(self.scoreLabel.frame.size.height)
+        self.bestScoreLabel.font = self.bestScoreLabel.font.withSize(self.bestScoreLabel.frame.size.height)
+        self.playAgainButton.titleLabel!.font = self.scoreLabel.font.withSize(self.scoreLabel.frame.size.height)
+        self.menuButton.titleLabel!.font = self.scoreLabel.font.withSize(self.scoreLabel.frame.size.height)
         
-        let defaults = NSUserDefaults.standardUserDefaults()
-        bestScoreLabel.text = String(defaults.integerForKey("bestScore"))
+        let defaults = UserDefaults.standard
+        bestScoreLabel.text = String(defaults.integer(forKey: "bestScore"))
     }
     
     func loadBanner() {
-        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-8795583871628295/5483745960")
         self.interstitial.delegate = self
         let request = GADRequest()
         // Requests test ads on test devices.
-        request.testDevices = ["2077ef9a63d2b398840261c8221a0c9b"]
-        self.interstitial.loadRequest(request)
+        request.testDevices = ["2077ef9a63d2b398840261c8221a0c9b", kGADSimulatorID]
+        self.interstitial.load(request)
     }
 
-    func interstitialDidReceiveAd(ad: GADInterstitial!) {
+    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
         if self.interstitial.isReady {
-            if let viewController =  parentViewController {
-                self.interstitial.presentFromRootViewController(viewController)
+            if let viewController =  parent {
+                self.interstitial.present(fromRootViewController: viewController)
             }
         }
     }
