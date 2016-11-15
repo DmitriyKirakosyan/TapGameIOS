@@ -68,7 +68,8 @@ class ObjectPopulation: NSObject, TTBehaviorDelegate {
     
     func createNewObject() {
         let object = TapTarget.tapTarget()
-
+        object.size = CGSize(width: 50, height: 50)
+        
         object.position = Utils.getOutOfBorderLocation(scene.frame.size, offset: object.size.width * 2)
         let behavior = TapTargetBehavior(screenSize: scene.frame.size, speed: currentSpeed)
         behavior.act(object)

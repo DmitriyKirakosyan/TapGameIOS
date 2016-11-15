@@ -85,6 +85,7 @@ class GameViewController: UIViewController, GameSceneDelegate, ResultViewControl
         resultController = storyboard.instantiateViewController(withIdentifier: "ResultViewController") as? ResultViewController;
         resultController!.delegate = self
         
+        self.addChildViewController(resultController!)
         self.view.addSubview(resultController!.view)
 
         resultController?.scoreLabel.text = "\(score)"
@@ -104,11 +105,12 @@ class GameViewController: UIViewController, GameSceneDelegate, ResultViewControl
         gameScene = nil
         (self.view as! SKView).presentScene(nil)
         
-        navigationController?.popToRootViewController(animated: true)
+        _ = navigationController?.popToRootViewController(animated: true)
     }
     
     fileprivate func dismissResultController() {
         resultController?.view.removeFromSuperview()
+        resultController?.removeFromParentViewController()
         resultController?.delegate = nil
         resultController = nil
     }

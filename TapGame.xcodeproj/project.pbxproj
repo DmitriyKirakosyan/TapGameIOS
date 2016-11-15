@@ -40,6 +40,8 @@
 		2CD0EA761C624EF9007D6E95 /* bestScore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA751C624EF9007D6E95 /* bestScore@2x.png */; };
 		2CD0EA781C6255D0007D6E95 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0EA771C6255D0007D6E95 /* ResultViewController.swift */; };
 		2CD0EA7A1C631D47007D6E95 /* btnBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA791C631D47007D6E95 /* btnBack@2x.png */; };
+		32DD4C4E1DDB8D9A00AADDEA /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD4C4D1DDB8D9A00AADDEA /* AdManager.swift */; };
+		32DD4C501DDB9EFC00AADDEA /* MenuTargetBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD4C4F1DDB9EFC00AADDEA /* MenuTargetBehavior.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +80,8 @@
 		2CD0EA751C624EF9007D6E95 /* bestScore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bestScore@2x.png"; sourceTree = "<group>"; };
 		2CD0EA771C6255D0007D6E95 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		2CD0EA791C631D47007D6E95 /* btnBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnBack@2x.png"; sourceTree = "<group>"; };
+		32DD4C4D1DDB8D9A00AADDEA /* AdManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
+		32DD4C4F1DDB9EFC00AADDEA /* MenuTargetBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTargetBehavior.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 				2CD0EA211C5E1CD3007D6E95 /* TapTarget.swift */,
 				2CD0EA401C606C2D007D6E95 /* TapTargetBehavior.swift */,
 				2CD0EA421C608780007D6E95 /* ObjectPopulation.swift */,
+				32DD4C4F1DDB9EFC00AADDEA /* MenuTargetBehavior.swift */,
 			);
 			path = objects;
 			sourceTree = "<group>";
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				2CD0EA451C609340007D6E95 /* Utils.swift */,
+				32DD4C4D1DDB8D9A00AADDEA /* AdManager.swift */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -277,6 +283,7 @@
 				TargetAttributes = {
 					2CD0EA031C5E0025007D6E95 = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 2SHZQS9RQ6;
 						LastSwiftMigration = 0810;
 					};
 				};
@@ -335,12 +342,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DD4C501DDB9EFC00AADDEA /* MenuTargetBehavior.swift in Sources */,
 				2CD0EA3C1C5E7E3C007D6E95 /* Settings.swift in Sources */,
 				2CD0EA221C5E1CD3007D6E95 /* TapTarget.swift in Sources */,
 				2CD0EA461C609340007D6E95 /* Utils.swift in Sources */,
 				2CD0EA0C1C5E0025007D6E95 /* GameScene.swift in Sources */,
 				2CD0EA431C608780007D6E95 /* ObjectPopulation.swift in Sources */,
 				2CD0EA781C6255D0007D6E95 /* ResultViewController.swift in Sources */,
+				32DD4C4E1DDB8D9A00AADDEA /* AdManager.swift in Sources */,
 				2CD0EA0E1C5E0025007D6E95 /* GameViewController.swift in Sources */,
 				2C8837E91CF0F1F100F70230 /* DebugSettings.swift in Sources */,
 				2CD0EA411C606C2D007D6E95 /* TapTargetBehavior.swift in Sources */,
@@ -458,13 +467,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2SHZQS9RQ6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TapGame/Frameworks",
 				);
 				INFOPLIST_FILE = TapGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emptycompany.TapGame;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.tapgame.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -474,13 +484,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 2SHZQS9RQ6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TapGame/Frameworks",
 				);
 				INFOPLIST_FILE = TapGame/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.emptycompany.TapGame;
+				PRODUCT_BUNDLE_IDENTIFIER = ru.tapgame.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

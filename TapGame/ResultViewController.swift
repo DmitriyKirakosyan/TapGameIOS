@@ -35,44 +35,36 @@ class ResultViewController: UIViewController, GADInterstitialDelegate {
         super.viewDidLoad()
         view.backgroundColor = UIColor(patternImage: UIImage(named: "backTile")!);
 
-        self.loadBanner()
+        self.loadInterstitialAd()
     }
     
     override func viewDidLayoutSubviews() {
         self.scoreLabel.font = self.scoreLabel.font.withSize(self.scoreLabel.frame.size.height)
         self.scoreTitleLabel.font = self.scoreLabel.font.withSize(self.scoreLabel.frame.size.height)
         self.bestScoreLabel.font = self.bestScoreLabel.font.withSize(self.bestScoreLabel.frame.size.height)
-        self.playAgainButton.titleLabel!.font = self.scoreLabel.font.withSize(self.scoreLabel.frame.size.height)
-        self.menuButton.titleLabel!.font = self.scoreLabel.font.withSize(self.scoreLabel.frame.size.height)
+        self.playAgainButton.titleLabel!.font = self.scoreLabel.font.withSize(self.scoreLabel.frame.size.height-10)
+        self.menuButton.titleLabel!.font = self.scoreLabel.font.withSize(self.scoreLabel.frame.size.height-10)
         
         let defaults = UserDefaults.standard
         bestScoreLabel.text = String(defaults.integer(forKey: "bestScore"))
     }
     
-    func loadBanner() {
-        self.interstitial = GADInterstitial(adUnitID: "ca-app-pub-8795583871628295/5483745960")
-        self.interstitial.delegate = self
-        let request = GADRequest()
-        // Requests test ads on test devices.
-        request.testDevices = ["2077ef9a63d2b398840261c8221a0c9b", kGADSimulatorID]
-        self.interstitial.load(request)
-    }
-
-    func interstitialDidReceiveAd(_ ad: GADInterstitial) {
-        if self.interstitial.isReady {
-            if let viewController =  parent {
-                self.interstitial.present(fromRootViewController: viewController)
-            }
+    func loadInterstitialAd() {
+        if let interstitial = AdManager.instance.getInterstitialAd() {
+            interstitial.present(fromRootViewController: self)
         }
     }
+
     
     @IBAction func menuBtnPressed() {
+        AdManager.instance.updateInterstitialAd()
         
         delegate?.userWantsGoToMenu()
     }
     
     @IBAction func againBtnPressed() {
-        
+        AdManager.instance.updateInterstitialAd()
+
         delegate?.userWantsPlayAgain()
     }
     

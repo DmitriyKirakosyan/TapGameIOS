@@ -11,11 +11,12 @@ import UIKit
 class MenuViewController: UIViewController {
 
     @IBOutlet weak var playButton: UIButton!
+    @IBOutlet weak var backgroundView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        view.backgroundColor = UIColor(patternImage: UIImage(named: "backTile")!);
+        backgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "backTile")!);
         
     }
     
@@ -43,7 +44,7 @@ class MenuViewController: UIViewController {
     */
     
     @IBAction func unwindFromViewController(_ segue: UIStoryboardSegue) {
-        print("and we are back")
+//        AdManager.instance.updateInterstitialAd()
     }
 
 
