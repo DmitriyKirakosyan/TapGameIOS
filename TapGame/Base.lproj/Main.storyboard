@@ -34,20 +34,20 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" image="name.png" translatesAutoresizingMaskIntoConstraints="NO" id="NGV-Tx-tQd">
-                                <rect key="frame" x="37.5" y="79" width="300" height="156"/>
+                                <rect key="frame" x="38" y="79" width="300" height="156"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="NGV-Tx-tQd" secondAttribute="height" multiplier="52:27" id="dfo-LZ-Q3g"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Q4-pn-UGw">
-                                <rect key="frame" x="319" y="34" width="40" height="40.5"/>
+                                <rect key="frame" x="319" y="34" width="40" height="41"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="1Q4-pn-UGw" secondAttribute="height" multiplier="1:1" id="zwl-Hj-vwS"/>
                                 </constraints>
                                 <state key="normal" image="soundOn.png"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6l8-Nl-KY6">
-                                <rect key="frame" x="131.5" y="243" width="112.5" height="58.5"/>
+                                <rect key="frame" x="132" y="243" width="112" height="59"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="6l8-Nl-KY6" secondAttribute="height" multiplier="21:11" id="yhx-ms-F5P"/>
                                 </constraints>
@@ -223,7 +223,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="SrK-o5-isk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="DRs-Ew-2mq"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="OOt-Ld-FHI">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="OOt-Ld-FHI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

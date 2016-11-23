@@ -33,11 +33,12 @@ class GameScene: SKScene, ObjectPopulationDelegate {
         // to make the scene size be actual
         self.size = self.view!.frame.size;
         
-        self.setupBackground()
+        Utils.setupBackgroundOnSKScene(scene: self)
         
         scoreLabel = SKLabelNode(fontNamed:"Chalkduster")
         scoreLabel.fontSize = 30
         scoreLabel.position = CGPoint(x:self.size.width/2, y:self.size.height - 50)
+        scoreLabel.fontColor = .red
 
         self.addChild(scoreLabel)
         

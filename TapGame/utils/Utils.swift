@@ -6,7 +6,7 @@
 //  Copyright © 2016 Dmitriy. All rights reserved.
 //
 
-import UIKit
+import SpriteKit
 
 class Utils: NSObject {
 
@@ -18,16 +18,46 @@ class Utils: NSObject {
         {
             let randomBool: CGFloat = CGFloat( arc4random() % 2 );
             randomX =  randomBool * borderSize.width + randomBool * offset + (randomBool - 1) * offset;
-            randomY = CGFloat(Int(arc4random()) % Int(borderSize.height));
+            randomY = CGFloat(arc4random() % UInt32(borderSize.height));
         }
         else
         {
             let randomBool: CGFloat = CGFloat( arc4random() % 2 );
             randomY =  randomBool * borderSize.height + randomBool * offset + (randomBool - 1) * offset;
-            randomX = CGFloat(Int(arc4random()) % Int(borderSize.width));
+            randomX = CGFloat(arc4random() % UInt32(borderSize.width));
         }
         
         return CGPoint(x: randomX, y: randomY)
+    }
+    
+    
+    class func setupBackgroundOnSKScene(scene: SKScene) {
+        var totW: CGFloat = 0;
+        var totH: CGFloat = 0;
+        var i = 0;
+        var j = 0;
+        let tile = SKTexture(image: UIImage(named: "backTile")!)
+        
+        while (totH < scene.size.height) {
+            
+            while (totW < scene.size.width) {
+                let bg = SKSpriteNode(texture: tile);
+                bg.zPosition = -100
+                let xPosition = CGFloat(i) * tile.size().width + tile.size().width/2
+                let yPosition = CGFloat(j) * tile.size().height + tile.size().height/2
+                
+                bg.position = CGPoint(x: xPosition, y: yPosition);
+                
+                scene.addChild(bg)
+                i += 1
+                totW += tile.size().width;
+            }
+            j += 1
+            totH += tile.size().height;
+            
+            i = 0; totW = 0;
+        }
+
     }
 
 }

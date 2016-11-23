@@ -56,7 +56,7 @@ class TapTarget: SKSpriteNode {
     }
     
     func setTapped() {
-        let index = Int(arc4random()) % _deathTextures.count
+        let index = Int(arc4random() % UInt32(_deathTextures.count))
         let deathTexture = SKTexture(imageNamed: _deathTextures[index])
         self.texture = deathTexture
     }

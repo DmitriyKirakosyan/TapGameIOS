@@ -10,13 +10,9 @@
 		2C8837E91CF0F1F100F70230 /* DebugSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C8837E81CF0F1F000F70230 /* DebugSettings.swift */; };
 		2CBF1E431C686A7C004E2350 /* HoboStd.otf in Resources */ = {isa = PBXBuildFile; fileRef = 2CBF1E421C686A7C004E2350 /* HoboStd.otf */; };
 		2CD0EA081C5E0025007D6E95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0EA071C5E0025007D6E95 /* AppDelegate.swift */; };
-		2CD0EA0A1C5E0025007D6E95 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA091C5E0025007D6E95 /* GameScene.sks */; };
-		2CD0EA0C1C5E0025007D6E95 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0EA0B1C5E0025007D6E95 /* GameScene.swift */; };
-		2CD0EA0E1C5E0025007D6E95 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0EA0D1C5E0025007D6E95 /* GameViewController.swift */; };
 		2CD0EA111C5E0025007D6E95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA0F1C5E0025007D6E95 /* Main.storyboard */; };
 		2CD0EA131C5E0025007D6E95 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA121C5E0025007D6E95 /* Assets.xcassets */; };
 		2CD0EA161C5E0025007D6E95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA141C5E0025007D6E95 /* LaunchScreen.storyboard */; };
-		2CD0EA1E1C5E011E007D6E95 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0EA1D1C5E011E007D6E95 /* MenuViewController.swift */; };
 		2CD0EA221C5E1CD3007D6E95 /* TapTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0EA211C5E1CD3007D6E95 /* TapTarget.swift */; };
 		2CD0EA301C5E7586007D6E95 /* tapTarget001@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA261C5E7586007D6E95 /* tapTarget001@2x.png */; };
 		2CD0EA311C5E7586007D6E95 /* tapTarget002@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA271C5E7586007D6E95 /* tapTarget002@2x.png */; };
@@ -38,25 +34,30 @@
 		2CD0EA731C61D73D007D6E95 /* soundOff@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA6B1C61D73D007D6E95 /* soundOff@2x.png */; };
 		2CD0EA741C61D73D007D6E95 /* soundOn@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA6C1C61D73D007D6E95 /* soundOn@2x.png */; };
 		2CD0EA761C624EF9007D6E95 /* bestScore@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA751C624EF9007D6E95 /* bestScore@2x.png */; };
-		2CD0EA781C6255D0007D6E95 /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CD0EA771C6255D0007D6E95 /* ResultViewController.swift */; };
 		2CD0EA7A1C631D47007D6E95 /* btnBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2CD0EA791C631D47007D6E95 /* btnBack@2x.png */; };
 		32DD4C4E1DDB8D9A00AADDEA /* AdManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD4C4D1DDB8D9A00AADDEA /* AdManager.swift */; };
 		32DD4C501DDB9EFC00AADDEA /* MenuTargetBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD4C4F1DDB9EFC00AADDEA /* MenuTargetBehavior.swift */; };
+		32DD4C581DDBA60700AADDEA /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD4C521DDBA60700AADDEA /* MenuViewController.swift */; };
+		32DD4C591DDBA60700AADDEA /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = 32DD4C541DDBA60700AADDEA /* GameScene.sks */; };
+		32DD4C5A1DDBA60700AADDEA /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD4C551DDBA60700AADDEA /* GameScene.swift */; };
+		32DD4C5B1DDBA60700AADDEA /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD4C561DDBA60700AADDEA /* GameViewController.swift */; };
+		32DD4C5C1DDBA60700AADDEA /* ResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD4C571DDBA60700AADDEA /* ResultViewController.swift */; };
+		32DD4C5E1DDBA61800AADDEA /* MenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32DD4C5D1DDBA61800AADDEA /* MenuScene.swift */; };
+		32DD4C611DE0C9A100AADDEA /* TapGame.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 32DD4C601DE0C9A100AADDEA /* TapGame.xcworkspace */; };
+		32DD4C631DE0CA2600AADDEA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 32DD4C621DE0CA2600AADDEA /* GoogleService-Info.plist */; };
+		446E6C2726BBFFFB86A609D6 /* Pods_TapGame.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB19C678B311E7D965EAF226 /* Pods_TapGame.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D63D791D8D7593E3C1A62EF /* Pods-TapGame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapGame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TapGame/Pods-TapGame.debug.xcconfig"; sourceTree = "<group>"; };
 		2C8837E81CF0F1F000F70230 /* DebugSettings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DebugSettings.swift; sourceTree = "<group>"; };
 		2CBF1E421C686A7C004E2350 /* HoboStd.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = HoboStd.otf; sourceTree = "<group>"; };
 		2CD0EA041C5E0025007D6E95 /* TapGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TapGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CD0EA071C5E0025007D6E95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CD0EA091C5E0025007D6E95 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		2CD0EA0B1C5E0025007D6E95 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		2CD0EA0D1C5E0025007D6E95 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		2CD0EA101C5E0025007D6E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CD0EA121C5E0025007D6E95 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CD0EA151C5E0025007D6E95 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CD0EA171C5E0025007D6E95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		2CD0EA1D1C5E011E007D6E95 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		2CD0EA211C5E1CD3007D6E95 /* TapTarget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TapTarget.swift; sourceTree = "<group>"; };
 		2CD0EA261C5E7586007D6E95 /* tapTarget001@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tapTarget001@2x.png"; sourceTree = "<group>"; };
 		2CD0EA271C5E7586007D6E95 /* tapTarget002@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tapTarget002@2x.png"; sourceTree = "<group>"; };
@@ -78,10 +79,20 @@
 		2CD0EA6B1C61D73D007D6E95 /* soundOff@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundOff@2x.png"; sourceTree = "<group>"; };
 		2CD0EA6C1C61D73D007D6E95 /* soundOn@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "soundOn@2x.png"; sourceTree = "<group>"; };
 		2CD0EA751C624EF9007D6E95 /* bestScore@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bestScore@2x.png"; sourceTree = "<group>"; };
-		2CD0EA771C6255D0007D6E95 /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
 		2CD0EA791C631D47007D6E95 /* btnBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btnBack@2x.png"; sourceTree = "<group>"; };
 		32DD4C4D1DDB8D9A00AADDEA /* AdManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdManager.swift; sourceTree = "<group>"; };
 		32DD4C4F1DDB9EFC00AADDEA /* MenuTargetBehavior.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTargetBehavior.swift; sourceTree = "<group>"; };
+		32DD4C521DDBA60700AADDEA /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		32DD4C541DDBA60700AADDEA /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
+		32DD4C551DDBA60700AADDEA /* GameScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
+		32DD4C561DDBA60700AADDEA /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
+		32DD4C571DDBA60700AADDEA /* ResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultViewController.swift; sourceTree = "<group>"; };
+		32DD4C5D1DDBA61800AADDEA /* MenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuScene.swift; sourceTree = "<group>"; };
+		32DD4C5F1DDCF8A500AADDEA /* TapGame.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TapGame.entitlements; sourceTree = "<group>"; };
+		32DD4C601DE0C9A100AADDEA /* TapGame.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = TapGame.xcworkspace; sourceTree = "<group>"; };
+		32DD4C621DE0CA2600AADDEA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		3D7C942E5FB979EA3C99A045 /* Pods-TapGame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TapGame.release.xcconfig"; path = "Pods/Target Support Files/Pods-TapGame/Pods-TapGame.release.xcconfig"; sourceTree = "<group>"; };
+		EB19C678B311E7D965EAF226 /* Pods_TapGame.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TapGame.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CD0EA491C60AD3F007D6E95 /* GoogleMobileAds.framework in Frameworks */,
+				446E6C2726BBFFFB86A609D6 /* Pods_TapGame.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,8 +119,11 @@
 		2CD0E9FB1C5E0025007D6E95 = {
 			isa = PBXGroup;
 			children = (
+				32DD4C601DE0C9A100AADDEA /* TapGame.xcworkspace */,
 				2CD0EA061C5E0025007D6E95 /* TapGame */,
 				2CD0EA051C5E0025007D6E95 /* Products */,
+				AB02C5ADEDAC2B9BC1EB9354 /* Pods */,
+				980712951AC40DBD8CA5A39F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -123,6 +138,9 @@
 		2CD0EA061C5E0025007D6E95 /* TapGame */ = {
 			isa = PBXGroup;
 			children = (
+				32DD4C5F1DDCF8A500AADDEA /* TapGame.entitlements */,
+				32DD4C511DDBA60700AADDEA /* Menu */,
+				32DD4C531DDBA60700AADDEA /* Game */,
 				2CD0EA471C60AD3F007D6E95 /* Frameworks */,
 				2CD0EA231C5E7586007D6E95 /* Resources */,
 				2CD0EA441C609311007D6E95 /* utils */,
@@ -130,15 +148,11 @@
 				2CD0EA4A1C60B1AC007D6E95 /* windows */,
 				2CD0EA201C5E1C76007D6E95 /* objects */,
 				2CD0EA071C5E0025007D6E95 /* AppDelegate.swift */,
-				2CD0EA091C5E0025007D6E95 /* GameScene.sks */,
-				2CD0EA0B1C5E0025007D6E95 /* GameScene.swift */,
-				2CD0EA0D1C5E0025007D6E95 /* GameViewController.swift */,
-				2CD0EA1D1C5E011E007D6E95 /* MenuViewController.swift */,
-				2CD0EA771C6255D0007D6E95 /* ResultViewController.swift */,
 				2CD0EA0F1C5E0025007D6E95 /* Main.storyboard */,
 				2CD0EA121C5E0025007D6E95 /* Assets.xcassets */,
 				2CD0EA141C5E0025007D6E95 /* LaunchScreen.storyboard */,
 				2CD0EA171C5E0025007D6E95 /* Info.plist */,
+				32DD4C621DE0CA2600AADDEA /* GoogleService-Info.plist */,
 			);
 			path = TapGame;
 			sourceTree = "<group>";
@@ -251,6 +265,43 @@
 			path = ui;
 			sourceTree = "<group>";
 		};
+		32DD4C511DDBA60700AADDEA /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				32DD4C521DDBA60700AADDEA /* MenuViewController.swift */,
+				32DD4C5D1DDBA61800AADDEA /* MenuScene.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		32DD4C531DDBA60700AADDEA /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				32DD4C541DDBA60700AADDEA /* GameScene.sks */,
+				32DD4C551DDBA60700AADDEA /* GameScene.swift */,
+				32DD4C561DDBA60700AADDEA /* GameViewController.swift */,
+				32DD4C571DDBA60700AADDEA /* ResultViewController.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		980712951AC40DBD8CA5A39F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EB19C678B311E7D965EAF226 /* Pods_TapGame.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AB02C5ADEDAC2B9BC1EB9354 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D63D791D8D7593E3C1A62EF /* Pods-TapGame.debug.xcconfig */,
+				3D7C942E5FB979EA3C99A045 /* Pods-TapGame.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,9 +309,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CD0EA1A1C5E0025007D6E95 /* Build configuration list for PBXNativeTarget "TapGame" */;
 			buildPhases = (
+				5E9094CC9B6EB63238AA2A04 /* [CP] Check Pods Manifest.lock */,
 				2CD0EA001C5E0025007D6E95 /* Sources */,
 				2CD0EA011C5E0025007D6E95 /* Frameworks */,
 				2CD0EA021C5E0025007D6E95 /* Resources */,
+				AB77712C589885AF96BFEDAA /* [CP] Embed Pods Frameworks */,
+				08619095DA3F83DA9DB23132 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -285,6 +339,14 @@
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 2SHZQS9RQ6;
 						LastSwiftMigration = 0810;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -315,8 +377,8 @@
 				2CD0EA3F1C5F74FF007D6E95 /* settings.json in Resources */,
 				2CD0EA741C61D73D007D6E95 /* soundOn@2x.png in Resources */,
 				2CD0EA311C5E7586007D6E95 /* tapTarget002@2x.png in Resources */,
+				32DD4C591DDBA60700AADDEA /* GameScene.sks in Resources */,
 				2CD0EA7A1C631D47007D6E95 /* btnBack@2x.png in Resources */,
-				2CD0EA0A1C5E0025007D6E95 /* GameScene.sks in Resources */,
 				2CD0EA321C5E7586007D6E95 /* tapTarget003@2x.png in Resources */,
 				2CD0EA701C61D73D007D6E95 /* name@2x.png in Resources */,
 				2CD0EA631C61D6D8007D6E95 /* deadTarget3@2x.png in Resources */,
@@ -329,6 +391,8 @@
 				2CD0EA611C61D6D8007D6E95 /* deadTarget1@2x.png in Resources */,
 				2CD0EA111C5E0025007D6E95 /* Main.storyboard in Resources */,
 				2CD0EA761C624EF9007D6E95 /* bestScore@2x.png in Resources */,
+				32DD4C611DE0C9A100AADDEA /* TapGame.xcworkspace in Resources */,
+				32DD4C631DE0CA2600AADDEA /* GoogleService-Info.plist in Resources */,
 				2CBF1E431C686A7C004E2350 /* HoboStd.otf in Resources */,
 				2CD0EA6D1C61D73D007D6E95 /* backTile@2x.png in Resources */,
 				2CD0EA6F1C61D73D007D6E95 /* btn@2x.png in Resources */,
@@ -337,24 +401,73 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		08619095DA3F83DA9DB23132 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TapGame/Pods-TapGame-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E9094CC9B6EB63238AA2A04 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		AB77712C589885AF96BFEDAA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-TapGame/Pods-TapGame-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2CD0EA001C5E0025007D6E95 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32DD4C5C1DDBA60700AADDEA /* ResultViewController.swift in Sources */,
 				32DD4C501DDB9EFC00AADDEA /* MenuTargetBehavior.swift in Sources */,
+				32DD4C581DDBA60700AADDEA /* MenuViewController.swift in Sources */,
+				32DD4C5E1DDBA61800AADDEA /* MenuScene.swift in Sources */,
 				2CD0EA3C1C5E7E3C007D6E95 /* Settings.swift in Sources */,
 				2CD0EA221C5E1CD3007D6E95 /* TapTarget.swift in Sources */,
+				32DD4C5B1DDBA60700AADDEA /* GameViewController.swift in Sources */,
 				2CD0EA461C609340007D6E95 /* Utils.swift in Sources */,
-				2CD0EA0C1C5E0025007D6E95 /* GameScene.swift in Sources */,
+				32DD4C5A1DDBA60700AADDEA /* GameScene.swift in Sources */,
 				2CD0EA431C608780007D6E95 /* ObjectPopulation.swift in Sources */,
-				2CD0EA781C6255D0007D6E95 /* ResultViewController.swift in Sources */,
 				32DD4C4E1DDB8D9A00AADDEA /* AdManager.swift in Sources */,
-				2CD0EA0E1C5E0025007D6E95 /* GameViewController.swift in Sources */,
 				2C8837E91CF0F1F100F70230 /* DebugSettings.swift in Sources */,
 				2CD0EA411C606C2D007D6E95 /* TapTargetBehavior.swift in Sources */,
 				2CD0EA081C5E0025007D6E95 /* AppDelegate.swift in Sources */,
-				2CD0EA1E1C5E011E007D6E95 /* MenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,8 +578,10 @@
 		};
 		2CD0EA1B1C5E0025007D6E95 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D63D791D8D7593E3C1A62EF /* Pods-TapGame.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TapGame/TapGame.entitlements;
 				DEVELOPMENT_TEAM = 2SHZQS9RQ6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -482,8 +597,10 @@
 		};
 		2CD0EA1C1C5E0025007D6E95 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D7C942E5FB979EA3C99A045 /* Pods-TapGame.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = TapGame/TapGame.entitlements;
 				DEVELOPMENT_TEAM = 2SHZQS9RQ6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",

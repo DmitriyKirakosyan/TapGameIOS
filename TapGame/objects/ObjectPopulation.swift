@@ -14,6 +14,7 @@ protocol ObjectPopulationDelegate {
 
 class ObjectPopulation: NSObject, TTBehaviorDelegate {
     var scene: SKScene
+    var containerBounds: CGRect
     var objects: [TapTargetBehavior] = []
     var timer = Timer()
     
@@ -30,8 +31,12 @@ class ObjectPopulation: NSObject, TTBehaviorDelegate {
         }
     }
     
-    init(container: SKScene) {
+    convenience init(container: SKScene) {
+        self.init(container: container, bounds: container.frame)
+    }
+    init(container: SKScene, bounds: CGRect) {
         scene = container
+        containerBounds = bounds
         
         minSpeed = Settings.objectSpeedMin
         maxSpeed = Settings.objectSpeedMax
@@ -70,8 +75,8 @@ class ObjectPopulation: NSObject, TTBehaviorDelegate {
         let object = TapTarget.tapTarget()
         object.size = CGSize(width: 50, height: 50)
         
-        object.position = Utils.getOutOfBorderLocation(scene.frame.size, offset: object.size.width * 2)
-        let behavior = TapTargetBehavior(screenSize: scene.frame.size, speed: currentSpeed)
+        object.position = Utils.getOutOfBorderLocation(containerBounds.size, offset: object.size.width * 2)
+        let behavior = TapTargetBehavior(screenSize: containerBounds.size, speed: currentSpeed)
         behavior.act(object)
         behavior.delegate = self
         objects.append(behavior)

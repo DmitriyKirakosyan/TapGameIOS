@@ -89,7 +89,9 @@ class TapTargetBehavior: NSObject {
         return self.getPointToFly(false)
     }
     func getPointToFly(_ longDistance: Bool) -> CGPoint {
-        var result = CGPoint(x: Int(arc4random()) % Int(screenSize.width), y: Int(arc4random()) % Int(screenSize.height))
+        let randomX = CGFloat(arc4random() % UInt32(screenSize.width))
+        let randomY = CGFloat(arc4random() % UInt32(screenSize.height))
+        var result = CGPoint(x: randomX, y: randomY)
         if tapTarget != nil && longDistance {
             if distance(tapTarget!.position, p2: result) < screenSize.width / 1.2 {
                 result = getPointToFly(true)
