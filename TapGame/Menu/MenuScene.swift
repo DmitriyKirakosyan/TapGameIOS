@@ -13,10 +13,7 @@ class MenuScene: SKScene {
     var population: ObjectPopulation?
 
     override func didMove(to view: SKView) {
-        
         Utils.setupBackgroundOnSKScene(scene: self)
-        
-        
     }
     
     func stopAnimation() {
@@ -29,6 +26,7 @@ class MenuScene: SKScene {
         if population == nil {
             population = ObjectPopulation(container: self)
             population!.run()
+            population?.speedIncreaseValue = 0
         }
         
 //        population!.delegate = self
